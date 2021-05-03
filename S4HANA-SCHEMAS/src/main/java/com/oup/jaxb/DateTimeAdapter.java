@@ -1,4 +1,4 @@
-package com.oup.jaxb.amadeusConnector;
+package com.oup.jaxb;
 
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
@@ -9,9 +9,9 @@ import org.joda.time.format.DateTimeFormatter;
 /**
  * Adapter used to marshal the various different date formats in the amadeus Connector xsd files.
  */
-public final class AmadeusDateTimeAdapter {
+public final class DateTimeAdapter {
 
-  private AmadeusDateTimeAdapter() {
+  private DateTimeAdapter() {
     // No construction allowed
   }
 

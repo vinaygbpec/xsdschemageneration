@@ -3,7 +3,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>s4hana-schemas</artifactId>
-  <name>Amadeus Service API</name>
+  <name>S4hana Service API</name>
   <description>${project.name}</description>
 
   <parent>
@@ -30,7 +30,7 @@
         <artifactId>jaxb2-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>amadeus</id>
+            <id>s4hana</id>
             <configuration>
               <bindingFiles>oup-s4hana-bindings.xjb</bindingFiles>
             </configuration>

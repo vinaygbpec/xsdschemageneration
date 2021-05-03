@@ -20,8 +20,8 @@
 	<jaxb:bindings schemaLocation="WBS_Session-2.0.xsd">
 		<jaxb:bindings node="//xs:element[@name='SequenceNumber']">
 			<jaxb:javaType name="java.lang.Integer"
-				parseMethod="com.oup.jaxb.amadeusConnector.StringToNumberAdapter.unmarshalIntToString"
-				printMethod="com.oup.jaxb.amadeusConnector.StringToNumberAdapter.marshalIntToString" />
+				parseMethod="com.oup.jaxb.StringToNumberAdapter.unmarshalIntToString"
+				printMethod="com.oup.jaxb.StringToNumberAdapter.marshalIntToString" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 

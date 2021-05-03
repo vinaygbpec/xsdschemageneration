@@ -1,4 +1,4 @@
-package com.oup.jaxb.amadeusConnector;
+package com.oup.jaxb;
 
 import javax.xml.bind.DatatypeConverter;
 
