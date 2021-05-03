@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oup</groupId>
+  <artifactId>oup-schema-generator</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>Support Services</name>
+
+  <modules>
+    <module>S4HANA-SCHEMAS</module> 
+    <module>jaxb-support</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+    </dependency>
+	
+	<dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-integration</artifactId>
+    </dependency>
+   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+    
+      <dependency>
+        <groupId>com.oup</groupId>
+        <artifactId>jaxb-support</artifactId>
+        <version>1.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jvnet.jaxb2_commons</groupId>
+        <artifactId>jaxb2-basics-runtime</artifactId>
+        <version>${jaxb2.basics.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>2.3</version>
+        <optional>true</optional><!--Encourage version of Joda-Time to be overridden-->
+      </dependency>
+
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>1.9.5</version>
+        <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-integration</artifactId>
+        <version>1.3</version>
+        <scope>test</scope>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>jaxb2-maven-plugin</artifactId>
+          <version>1.6</version>
+          <configuration>
+            <arguments>-Xequals -XhashCode -XtoString -XtoString-toStringStrategyClass=com.oup.jaxb.ToStringStrategy -Xsetters -Xsetters-mode=direct -Xvalue-constructor -Xinheritance</arguments>
+            <extension>true</extension>
+            <enableIntrospection>true</enableIntrospection>
+            <target>2.1</target>
+            <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+            <bindingDirectory>${project.basedir}/src/main/resources</bindingDirectory>
+            <quiet>true</quiet>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.jvnet.jaxb2_commons</groupId>
+              <artifactId>jaxb2-basics</artifactId>
+              <version>${jaxb2.basics.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.jvnet.jaxb2_commons</groupId>
+              <artifactId>jaxb2-value-constructor</artifactId>
+              <version>${jaxb2.value.constructor.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <!-- Disable Javadoc generation by default due to large amount of generated classes and the time it takes to
+          run javadoc -->
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <properties>
+    <jaxb2.basics.version>0.6.5</jaxb2.basics.version>
+    <jaxb2.value.constructor.version>3.0</jaxb2.value.constructor.version>
+    <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+  </properties>
+
+</project>

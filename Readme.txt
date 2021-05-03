@@ -1,6 +1,3 @@
-# xsdschemageneration
-This application generates the java schema for xsd's
-
 Steps to create jar of Amadesus classes for a new functionality.
 1. Make a copy of 'S4HANA-SCHEMAS' module and give it a name specific to your functionality. For example let's name it 'S4HANA-SCHEMAS-DP'
 2. In above created 'S4HANA-SCHEMAS-DP' module's resource folder copy your xsd and make its entry in 'oup-s4hana-bindings.xjb' and remove all other xsd's.
