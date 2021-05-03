@@ -31,9 +31,9 @@
         <executions>
           <execution>
             <id>s4hana</id>
-            <configuration>
+          <!--  <configuration>
               <bindingFiles>oup-s4hana-bindings.xjb</bindingFiles>
-            </configuration>
+            </configuration> -->
             <goals>
               <goal>xjc</goal>
             </goals>
