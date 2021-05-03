@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jaxb-support/jaxb-support.iml" filepath="$PROJECT_DIR$/jaxb-support/jaxb-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oup-schema-generator.iml" filepath="$PROJECT_DIR$/oup-schema-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S4HANA-SCHEMAS/s4hana-schemas.iml" filepath="$PROJECT_DIR$/S4HANA-SCHEMAS/s4hana-schemas.iml" />
+    </modules>
+  </component>
+</project>
